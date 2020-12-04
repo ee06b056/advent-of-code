@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class ReportRepair {
     static int solution1 (int[] expense) {
-        HashSet hs = new HashSet<>();
+        HashSet<Integer> hs = new HashSet<>();
         for (int e : expense) {
             if (hs.contains(2020 - e)) {
                 return e * (2020 - e);
