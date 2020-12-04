@@ -16,13 +16,23 @@ public class ReportRepair {
     }
 
     static int solution2 (int[] expense) {
-        for (int i = 0; i < expense.length - 2; i++) {
-            for (int j = i + 1; j < expense.length - 1; j++) {
-                for (int k = j + 1; k < expense.length; k++) {
-                    if (expense[i] + expense[j] + expense[k] == 2020) {
-                        return expense[i] * expense[j] * expense[k];
-                    }
+        // for (int i = 0; i < expense.length - 2; i++) {
+        //     for (int j = i + 1; j < expense.length - 1; j++) {
+        //         for (int k = j + 1; k < expense.length; k++) {
+        //             if (expense[i] + expense[j] + expense[k] == 2020) {
+        //                 return expense[i] * expense[j] * expense[k];
+        //             }
+        //         }
+        //     }
+        // }
+        HashSet<Integer> hs = new HashSet<>();
+        for (int i = 0; i < expense.length - 1; i++) {
+            hs.add(expense[i]);
+            for (int j = i + 1; j < expense.length; j++) {
+                if (hs.contains(2020 - expense[i] - expense[j])) {
+                    return expense[i] * expense[j] * (2020 - expense[i] - expense[j]);
                 }
+                hs.add(expense[j]);
             }
         }
         return 0;
