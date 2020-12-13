@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class CustomCustoms {
     static int solution1 (List<HashSet<Character>> customs) {
         int res = 0;
-        for (HashSet custom : customs) {
+        for (HashSet<Character> custom : customs) {
             res += custom.size();
         }
         return res;
