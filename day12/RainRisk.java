@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class RainRisk {
     static int solution1 (List<String> instructions) {
-        char[] directions = {'E', 'S', 'W', 'N'};
         int[][] moves = {{1, 0}, {0, -1}, {-1, 0}, {0, 1}};
         int dirPos = 0;
         int[] coord = {0, 0};
