@@ -95,6 +95,7 @@ public class TicketTranslation {
             validPosList.add(perCValidPosSet);
         }
         Map<Integer, Integer> constraintToFieldpos = new HashMap<>();
+        // TODO: need refactor to better algorithm later
         while (constraintToFieldpos.size() != 20) {
             for (int i = 0; i < 20; i++) {
                 Set<Integer> set = validPosList.get(i);
